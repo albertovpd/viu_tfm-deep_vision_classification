@@ -8,8 +8,24 @@ Hi there!
 
 This repo is going to be quite messy while finding the best approach to the goals, which at the moment, look like this:
 - Computer Vision to classify different spaces inside houses.
-- Enhace pre-trained models for that purpose.
+- Improve pre-trained models for that purpose.
 - Study the viability of creating a Real State pricing problem, adding the previous results as features.
+
+## Roadmap: 
+
+https://github.com/users/albertovpd/projects/8
+
+- Starting from here => https://www.kaggle.com/robinreni/house-rooms-image-dataset
+- Inspect dataset
+- Basic NN start:
+    - Alexnet
+    - ResNet
+    - SqueezeNet
+    - EfficientNet
+    - any other I think it could be great
+- Monk testing
+
+-----------------------------------------------
 
 - Stuff to check:
 De momento puedes ir echándole un ojo a estos enlaces. Si alguno no puedes porque es de pago, puedes usar sci-hub:
@@ -26,7 +42,9 @@ De momento puedes ir echándole un ojo a estos enlaces. Si alguno no puedes porq
     
 
 
-### Possible sources at this time:
+
+
+### Pending sources at this time:
 
 - Dataset: House price prediction with exterior front of houses (socal)
     - front (pics)
