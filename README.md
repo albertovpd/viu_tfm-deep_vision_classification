@@ -11,6 +11,28 @@ This repo is going to be quite messy while finding the best approach to the goal
 - Improve pre-trained models for that purpose.
 - Study the viability of creating a Real State pricing problem, adding the previous results as features.
 
+- Tensorflow-GPU on Colab => https://colab.research.google.com/notebooks/gpu.ipynb#scrollTo=oM_8ELnJq_wd
+- Why using GPU for Deep Learning => https://towardsdatascience.com/what-is-a-gpu-and-do-you-need-one-in-deep-learning-718b9597aa0d
+
+-------------------------
+
+Developer stuff:
+<details>
+  <summary>Click to expand</summary>
+
+- https://github.com/users/albertovpd/projects/8
+- https://github.com/albertovpd/viu-fundamentos_redes_neuronales/tree/main/colabs/tasks
+- https://github.com/albertovpd/viu-fundamentos_redes_neuronales/blob/main/colabs/clase_2y3-Introduccion_a_Deep_Learning_Colab_ipynb.ipynb
+
+- https://analyticsindiamag.com/transfer-learning-for-multi-class-image-classification-using-deep-convolutional-neural-network/
+- https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
+- https://towardsdatascience.com/handling-overfitting-in-deep-learning-models-c760ee047c6e
+- https://www.kaggle.com/ryanholbrook/overfitting-and-underfitting
+
+</details>
+
+-------------------------
+
 # Branches
 
 - vgg19-analyticsindia
@@ -22,19 +44,11 @@ This repo is going to be quite messy while finding the best approach to the goal
 
 - resnet34 (if available)/resnet50 
 
+------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-## Roadmap: 
+### Roadmap: 
+<details>
+  <summary>Click to expand</summary>
 
 https://github.com/users/albertovpd/projects/8
 
@@ -48,9 +62,14 @@ https://github.com/users/albertovpd/projects/8
     - any other I think it could be great
 - Monk testing
 
+</details>
+
 -----------------------------------------------
 
-- Stuff to check:
+Stuff to check:
+<details>
+  <summary>Click to expand</summary>
+
 De momento puedes ir echándole un ojo a estos enlaces. Si alguno no puedes porque es de pago, puedes usar sci-hub:
 
 
@@ -63,11 +82,13 @@ De momento puedes ir echándole un ojo a estos enlaces. Si alguno no puedes porq
     - https://datafiniti.co/products/property-data/?gclid=Cj0KCQjwjPaCBhDkARIsAISZN7QOjbchXQJ_mQ37hpHtyPSpK-AV7S-LpZ-BxvjY2ic4vr3oxRlacWkaAjSXEALw_wcB
     - https://ieeexplore.ieee.org/abstract/document/7926631
     
+</details>
 
-
-
+------------------------------------------------
 
 ### Pending sources at this time:
+<details>
+  <summary>Click to expand</summary>
 
 - Dataset: House price prediction with exterior front of houses (socal)
     - front (pics)
@@ -132,7 +153,7 @@ De momento puedes ir echándole un ojo a estos enlaces. Si alguno no puedes porq
     - Views.
     - https://medium.com/airbnb-engineering/categorizing-listing-photos-at-airbnb-f9483f3ab7e3
 
------------------------------------------
+</details>
 
 
 
@@ -143,7 +164,7 @@ De momento puedes ir echándole un ojo a estos enlaces. Si alguno no puedes porq
 
 -----------------------------------
 
-#### Personal and boring notes.
+#### Notes.
 <details>
   <summary>Click to expand.</summary>
 TFM: Línea Temática: Sistema automático de clasificación de viviendas mediante el uso únicamente de fotografías
@@ -197,3 +218,14 @@ TFM: Línea Temática: Sistema automático de clasificación de viviendas median
 
 </details>
 
+---------------
+
+**Personal info**
+<details>
+  <summary>Click to expand.</summary>
+
+https://www.linkedin.com/in/alberto-vargas-pina/
+
+![alt](output/science_dog.webp)
+
+</details>
