@@ -34,6 +34,82 @@ This repo is going to be quite messy while finding the best approach to the goal
 - Tensorflow-GPU on Colab => https://colab.research.google.com/notebooks/gpu.ipynb#scrollTo=oM_8ELnJq_wd
 - Why using GPU for Deep Learning => https://towardsdatascience.com/what-is-a-gpu-and-do-you-need-one-in-deep-learning-718b9597aa0d
 
+------------------------------------
+
+### Roadmap: 
+<details>
+  <summary>Click to expand</summary>
+
+https://github.com/users/albertovpd/projects/8
+
+----------------------------------
+--------------------------------
+
+- **meeting 21.10.21**
+
+- no podía establecer el modelo como sequential siguiendo los pasos del a vgg16, y hay gente que tiene problemas https://github.com/keras-team/keras/issues/9721 , pero he encontrado otra manera, y quiero comprobar que estoy haciéndolo de forma correcta
+
+------------------------------
+
+- **meeting 27.09.21**
+
+SIN DATA AUGMENTATION:
+
+- elegir otra arquitectura de red
+
+    - coger vgg16
+
+    - entrenar con la vgg16 y cambiar la ÚLTIMA CAPA, aque en vez de 1000 neuronas, quitársela y ponerle 5 neuronas
+
+- Una vez hecho esto, intentar usar un modelo un poco mejor
+
+    - resnet que no tenga muchas capas (resnet34 quizás). cambiando la últia capa, poniendo 5 clases. debería funcionar mejor
+
+- Si voy sobrado de tiempo: Una vez hecho esto, entrenar un autoencoder para que te reconstruya las imágenes, y usaremos su output como entrada, en vez de las imágenes del dataset en sí. (docu de tensorflow)
+
+
+- Realizar los mismos procedimientos con data augmentation, probar este bloque => https://imgaug.readthedocs.io/en/latest/source/examples_basics.html#a-simple-and-common-augmentation-sequence
+
+qué debe  involucrar data autmentation: (la librería de arriba ya te lo hace todo)
+
+     - girar las imágenes de forma aleatoria, y aparte que cambie su color, DE FORMA ALEATORIA.
+
+    - rotar / espejar / añadir ruido / cambiar contraste / cambiar brillo (color glitter) , y que se usen de forma aleatoria sobre mis datos de entrada.
+
+    - img aug es muy buena a eso, ya incorpora estas incertidumbres.
+
+
+- Para el futuro:
+
+        - probar squeezenet
+
+        - probar efficientnet (si es para clasificación
+
+
+PLAZOS: 2 meses y medio.
+
+- los 2 primeros puntos en 2 semanas.
+
+
+
+
+
+
+
+-----------------
+
+- Starting from here => https://www.kaggle.com/robinreni/house-rooms-image-dataset
+- Inspect dataset
+- Basic NN start:
+    - Alexnet
+    - ResNet
+    - SqueezeNet
+    - EfficientNet
+    - any other I think it could be great
+- Monk testing
+
+</details>
+
 -------------------------
 
 Developer stuff:
@@ -53,25 +129,7 @@ Developer stuff:
 
 
 
-------------------------------------
 
-### Roadmap: 
-<details>
-  <summary>Click to expand</summary>
-
-https://github.com/users/albertovpd/projects/8
-
-- Starting from here => https://www.kaggle.com/robinreni/house-rooms-image-dataset
-- Inspect dataset
-- Basic NN start:
-    - Alexnet
-    - ResNet
-    - SqueezeNet
-    - EfficientNet
-    - any other I think it could be great
-- Monk testing
-
-</details>
 
 -----------------------------------------------
 
