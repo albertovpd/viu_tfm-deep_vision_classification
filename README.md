@@ -49,6 +49,27 @@ https://github.com/users/albertovpd/projects/8
 
 - no podía establecer el modelo como sequential siguiendo los pasos del a vgg16, y hay gente que tiene problemas https://github.com/keras-team/keras/issues/9721 , pero he encontrado otra manera, y quiero comprobar que estoy haciéndolo de forma correcta
 
+-vgg16: congelar las capas convolucionales.
+    - cargar el modelo
+    - añadir early stop
+    ping como callback 
+    - dejar termianr el entrenamiento
+    - matriz de confusión: dependiendo de los resultados, si hay alguna clase que funciona muy mal, eliminar esa clase que funciona mal.
+    - añadir dropout entre capa densa y capa densa del modelo
+    - dejar el learning rate como lo tenía y comparar con lo nuevo. cambiando el learning rate y scheduler
+    - más de un 5% de diferencia entre acc y val_acc ya es overfitting
+
+- resnet
+    - añadirle algo parecido a las dense como la vgg16 (2 de mil, 1 de mil y 2 de 5... ir buscando)
+    - busca la arquitectura, mira las últimas capas que no estás cargando (include top = false, y mete capas)
+
+    - añadir dropout entre capa densa y capa densa del modelo
+- **PYIMAGESEARCH DATA AUGMENTATION**
+
+- busca la clase model para crear arquitecturas si tienes problemas, como en la resnet50
+
+- pyimage research para hacer pruebas y mejorar
+
 ------------------------------
 
 - **meeting 27.09.21**
