@@ -45,7 +45,7 @@ https://github.com/users/albertovpd/projects/8
 ----------------------------------
 --------------------------------
 
-- **meeting ___**
+- **UPDATES TO SHARE**
 
 **vgg16**
 
@@ -78,6 +78,73 @@ https://github.com/users/albertovpd/projects/8
     ```
 
     - Si le meto dropout entre capa densa y capa densa, no sabría qué valor asignarle... 0.3? 0.2?? alguna manera de definir eso?
+
+
+**RESNET50**
+
+- la arquitectura completa incluye 2 capas finales:
+    - avg_pool (globalAveragePooling2 (None, 2048)-0 params
+    - predictions (Dense (None, 1000)- 2049000 params)
+    -Total params: 25,636,712
+    - Trainable params: 25,583,592
+    - Non-trainable params: 53,120
+
+Entonces, estoy cargando el modelo sin el top model y pensaba añadirle las 2 capas que faltan, que son 
+- avg_pool (GlobalAveragePooling2 (None, 2048)         0           conv5_block3_out[0][0] 
+- predictions (Dense)             (None, 1000)         2049000     avg_pool[0][0]    (cambiando por 5 neuronas)
+
+
+
+- aquí hay un ejemplo para la resnet50 que tengo que probar => https://www.programcreek.com/python/example/89688/keras.layers.GlobalAveragePooling2D
+
+Sin embargo, si intento hacer esto:
+
+```
+from tensorflow.keras.layers import GlobalAveragePooling2D
+pre_trained_resnet50 = Sequential()
+# NOTE that this layer will be set below as NOT TRAINABLE, i.e., use it as is
+pre_trained_resnet50.add(ResNet50(include_top=False, weights='imagenet', input_shape=(128, 128, 3), classes = y_train.shape[1], classifier_activation='softmax'))
+
+# Freeze the layers 
+for layer in pre_trained_resnet50.layers:
+    layer.trainable = False
+
+# https://keras.io/api/layers/pooling_layers/global_average_pooling2d/
+x = tf.random.normal(x_train.shape)
+pre_trained_resnet50.add(GlobalAveragePooling2D()(x))
+pre_trained_resnet50.add(Dense(5,activation=('softmax'))) 
+pre_trained_resnet50.summary()
+```
+
+Tengo el error de que no puedo meter esa capa GlobalAveragePooling de esa manera (TypeError: The added layer must be an instance of class Layer. Found: tf.Tensor)
+
+- También he encontrado esto por internet:
+
+```
+# ResNet50 Model for transfer Learning 
+	def resnet_pseudo(self,dim=224,freeze_layers=10,full_freeze='N'):
+		model = ResNet50(ResNet50(include_top=False, weights='imagenet', input_shape=(128, 128, 3), classes = y_train.shape[1], classifier_activation='softmax'))
+		x = model.output
+		x = GlobalAveragePooling2D()(x)
+		x = Dense(512, activation='relu')(x)
+		x = Dropout(0.5)(x)
+		x = Dense(512, activation='relu')(x)
+		x = Dropout(0.5)(x)
+		out = Dense(5,activation='softmax')(x)
+		model_final = Model(input = model.input,outputs=out)
+		if full_freeze != 'N':
+			for layer in model.layers[0:freeze_layers]:
+				layer.trainable = False
+		return model_final
+```
+
+No tiene mucha info, pero puedo congelar todas las capas menos las últimas y  tirar, pero no sé por qué añade esas 3 últimas capas densas de 512 si la resnet tiene otra arquitectura en el top model.
+
+
+Estas son mis dudas de resnet y vgg a día de hoy. Espero que se entienda el markdown y si no, cuadramos tutoría cuando mejor te venga.
+Un saludo,
+Alberto
+
 
 -----------------------------------------
 -------------------------------------------
