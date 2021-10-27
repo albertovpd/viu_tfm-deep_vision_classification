@@ -11,22 +11,9 @@ This repo is going to be quite messy while finding the best approach to the goal
 - Improve pre-trained models for that purpose.
 - Study the viability of creating a Real State pricing problem, adding the previous results as features.
 
--------------------------
-## Updates & evolution.
-
-- https://docs.google.com/document/d/1z8G_THiNSHe14UcoJhIIcJL4NLlCuOiVTu6yvla37qo/edit
 
 
-# Branches
 
-- vgg19-analyticsindia
-    - overfitting
-    - too much layers
-    - trained with too much classes
-
-- vgg16
-
-- resnet34 (if available)/resnet50 
 
 -------------------------------------------
 -------------------------------------------
