@@ -36,35 +36,6 @@ https://github.com/users/albertovpd/projects/8
 
 **vgg16**
 
-- method
-    - https://www.tensorflow.org/api_docs/python/tf/keras/applications/vgg16/VGG16
-    - last layers of vgg16 are 2 dense layers of 4096 neurons and a last one of 1000 neurons (to classify 1000 different classes)
-    - última capa dense cambiada de 4096 a 1000 (he visto que el top model eran 2 capas de 4096 y 1000, no 2 de 4k)
-    - load all layers but the top model (last 3 dense layers). this will be the base model
-    - freeze layers of base model (saving how they're trained)
-    - we want to copy the vgg16 architecture, so we have to add manually the last layers: we'll add 2 dense layers of 4096 and change the last one designed to classifty 1000 classes for a 5-neurons layer.
-
-    - early stopping descartado de momento, 
-    me para el proceso a los 28 epochs, no sé cómo tunear eso, lo he llegado a poner hasta que pare a las 10epochs pero nada
-
-- modifications
-    - changed data augmentation, añadido randomness con vertical flip y shear range
-    
-    ```
-    #Data Augmentation first
-    train_generator = ImageDataGenerator(rotation_range=2, shear_range=0.2, vertical_flip=True, horizontal_flip=True, zoom_range=.1)
-    val_generator = ImageDataGenerator(rotation_range=2, shear_range=0.2, vertical_flip=True, horizontal_flip=True, zoom_range=.1)
-    test_generator = ImageDataGenerator(rotation_range=2, shear_range=0.2, vertical_flip=True, horizontal_flip= True, zoom_range=.1)
-    ``` 
-    - Mejora significativa en la performance (creo) aunque sigue habiendo overfitting fuerte. Entiendo que la clave es la librería de data augmentation que hablamos en su día
-    ![alt](output/vgg16-20211026.png)
-    ![alt](output/vgg16-20211026-confusion_matrix.png)    
-    - Sin duda alguna, las clase que tiene mejores métricas son los dormitorios, después cocina y salón. La que peor, cuarto de baño, que se corresponde el mayor número de imágenes
-    ```
-    Counter({'Livingroom': 1273, 'Bedroom': 1248, 'Dinning': 1158, 'Kitchen': 965, 'Bathroom': 606})
-    ```
-
-    - Si le meto dropout entre capa densa y capa densa, no sabría qué valor asignarle... 0.3? 0.2?? alguna manera de definir eso?
 
 
 **RESNET50**
