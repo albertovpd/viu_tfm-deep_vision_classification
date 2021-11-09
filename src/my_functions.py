@@ -6,7 +6,6 @@ from tensorflow.keras.layers import Input, Conv2D, Dense, Dropout, MaxPooling2D,
 from keras.layers import GlobalAveragePooling2D # GlobalMaxPooling2D,
 from tensorflow.keras.optimizers import SGD
 
-from sklearn.metrics import classification_report
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
@@ -76,6 +75,21 @@ def vgg16_19_conf(name: str, neurons_final_layer:int, dropout_layers: bool, drop
   model.add(Dense(neurons_final_layer,activation=('softmax'))) 
   return model
   
+def generic_last_2layers(nn,neurons_final_layer:int, dropout_layers: bool, dropout_percent: float, y_train):
+  pre_trained = Sequential()
+  pre_trained.add(nn)
+
+  # Freeze the layers 
+  for layer in pre_trained.layers:
+      layer.trainable = False
+
+  #aÃ±adimos el top model
+  pre_trained.add(GlobalAveragePooling2D()) # https://keras.io/api/layers/pooling_layers/global_average_pooling2d/
+  if dropout_layers ==True:
+    pre_trained.add(Dropout(0.2)) 
+  pre_trained.add(Dense(5,activation=('softmax')))  # sustituyo  por mi Ãºltima capa de 5neuronas => pre_trained_resnet50.add(Dense(1024,activation=('softmax'))) 
+  return pre_trained
+  
 def resnet50_conf(neurons_final_layer:int, dropout_layers: bool, dropout_percent: float, y_train):
   pre_trained_resnet50 = Sequential()
   pre_trained_resnet50.add(ResNet50(include_top=False, weights='imagenet', input_shape=(128, 128, 3), classes = y_train.shape[1], classifier_activation='softmax'))
@@ -86,12 +100,13 @@ def resnet50_conf(neurons_final_layer:int, dropout_layers: bool, dropout_percent
 
   #aÃ±adimos el top model
   pre_trained_resnet50.add(GlobalAveragePooling2D()) # https://keras.io/api/layers/pooling_layers/global_average_pooling2d/
-  pre_trained_resnet50.add(Dropout(0.2)) 
+  if dropout_layers ==True:
+    pre_trained_resnet50.add(Dropout(0.2)) 
   pre_trained_resnet50.add(Dense(5,activation=('softmax')))  # sustituyo  por mi Ãºltima capa de 5neuronas => pre_trained_resnet50.add(Dense(1024,activation=('softmax'))) 
   return pre_trained_resnet50
   
   
-def plotting_model(model, epochs):
+def plotting_model(model, epochs, name):
   #Plotting the training and validation loss and accuracy
   f,ax=plt.subplots(2,1) 
 
