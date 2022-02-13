@@ -13,6 +13,7 @@ Hi there! As brief introduction, this project consist of:
 #### Further description:
 <details>
   <summary>Click to expand</summary>
+
 - How to save datasets of images in a pickle and work with it.
 - Data augmentation for pickled data.
 - Pickling data VS batch loading them straight from the folder.
@@ -32,7 +33,7 @@ Hi there! As brief introduction, this project consist of:
 <details>
   <summary>Click to expand</summary>
     
-- The dataset I'm working with: House room dataset (5 different rooms)
+The dataset I'm working with: House room dataset (5 different rooms)
     - bathroom
     - bedroom
     - dinning room
