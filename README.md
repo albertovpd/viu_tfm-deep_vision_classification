@@ -14,6 +14,7 @@ Hi there! As brief introduction, this project consist of:
 <details>
   <summary>Click to expand</summary>
 
+- Dealing with uneven datasets.
 - How to save datasets of images in a pickle and work with it.
 - Data augmentation for pickled data.
 - Pickling data VS batch loading them straight from the folder.
@@ -21,8 +22,8 @@ Hi there! As brief introduction, this project consist of:
     - Comparing between using this method straight to the dataset or after creating the *train, test, validation* folders manually.
     - How to create the *train, test, validation* folders shuffling data in order to have a kind of stratified k-folds validation, with physically different folders.
 - Data augmentation layer added to sequential nn architectures.
-- Generating synthetic data with StyleGAN
-- Goodness of different pre-trained models with fine-tuning
+- Generating synthetic data with StyleGAN.
+- Goodness of different pre-trained models with fine-tuning.
 
 </details>
 
