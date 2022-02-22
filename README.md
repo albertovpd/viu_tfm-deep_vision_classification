@@ -3,12 +3,14 @@
 
 ----------------------------------
 
-
-Hi there! As brief introduction, this project consist of:
+This project consist of:
 - Computer Vision to classify different spaces inside houses.
-- Improve pre-trained models for that purpose.
+- Fine-tuning of pre-trained models.
+- Use data augmentation and study the creation of synthetic data.
 
 ----------------------------------
+
+![alt](output/catstruction.png)
 
 In this branch I show: 
 - How to create a pickle with your input data (notebook **src/pickling_data**)
