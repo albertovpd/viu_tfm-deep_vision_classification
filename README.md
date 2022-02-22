@@ -1,21 +1,28 @@
 # Final Master's Work at VIU.
-## Computer Vision classification for Real State.
 
-----------------------------------
 
-This project consist of:
-- Computer Vision to classify different spaces inside houses.
+<details>
+  <summary>Main branch intro.</summary>
+ This is a Computer Vision classification for Real State. The intention of this project is to improve the classification of different spaces inside houses. 
+
+Consisting of:
 - Fine-tuning of pre-trained models.
-- Use data augmentation and study the creation of synthetic data.
+- Data augmentation.
+    - TensorFlow method *ImageDataGenerator* in pickled data.
+    - Adding data augmentation as a sequential layer using the TensorFlow method *image_dataset_from_directory*  straight from the pics folder.
+- Study the creation of synthetic data.
+</details>
+
+
 
 ----------------------------------
+
+## Pickle_input branch:
+
+- How to create a pickle from your input data and load it in memory as a whole.
+- Advantages and disadvantages.
+- Use of the *ImageDataGenerator* method.
+
 
 ![alt](output/catstruction.png)
 
-In this branch I show: 
-- How to create a pickle with your input data (notebook **src/pickling_data**)
-- Use it to work with a NN architecture.
-
-Problems:
-- First of all, I want to include a data augmentation layer in the NN architecture. For that is best practices to load the pics straight from the folders with batch processingl
-- Loading an entire pickle means using your RAM for storing all that info and leads to RAM shortage.
