@@ -1,23 +1,7 @@
 # Final Master's Work at VIU.
 
 
- Hi there!
 
- This is a Computer Vision classification problem for Real State. The intention of this project is the study of models performance with lack of data.
-
-Consisting of:
-- Fine-tuning of pre-trained models.
-- Data augmentation.
-    - TensorFlow method *ImageDataGenerator* in pickled data.
-    - Adding data augmentation as a sequential layer using the TensorFlow method *image_dataset_from_directory*  straight from the pics folder.
-- Study the creation of synthetic data.
-- Use of synthetic data.
-
-----------------------------------
-
-![alt](output/catstruction.png)
-
-----------------------------------
 
 In the different branches can be found the different approaches/sections of this project. Current useful branches:
 
@@ -41,24 +25,11 @@ In the different branches can be found the different approaches/sections of this
 
 ----------------------------------
 
+# Synthetic data application.
 
+- Without fake pics we have:
+![alt](output/0.png)
 
-### Roadmap: 
-<details>
-  <summary>Click to expand</summary>
+- 50, 250 and 480 synthetic pictures will be added to each class.
+- model performance will be compared: without fake data, with 50, 250 adn 480 fake pics.
 
-https://github.com/users/albertovpd/projects/8
-
-</details>
-
-----------------------------------
-
-**Personal info**
-<details>
-  <summary>Click to expand.</summary>
-
-https://www.linkedin.com/in/alberto-vargas-pina/
-
-![alt](output/science_dog.webp)
-
-</details>
