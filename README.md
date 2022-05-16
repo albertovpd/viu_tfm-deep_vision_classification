@@ -1,9 +1,7 @@
 # Final Master's Work at VIU.
 
 
-
-
-In the different branches can be found the different approaches/sections of this project. Current useful branches:
+Different branches of the project:
 
 - **pickle_input.**
 
@@ -27,9 +25,19 @@ In the different branches can be found the different approaches/sections of this
 
 # Synthetic data application.
 
-- Without fake pics we have:
+The dataset was shuffled. Then 150 pics of each class were stored as test_set.
+The remaining ones were shuffled again, and split into train (80%) and validation (20%)
+
+- Without fake pics nor splitting into train/val/test we have:
 ![alt](output/0.png)
 
-- 50, 250 and 480 synthetic pictures will be added to each class.
-- model performance will be compared: without fake data, with 50, 250 adn 480 fake pics.
+Splitting it:
+- train:
+![alt](output/0train.png)
+- validation:
+![alt](output/0val.png)
+- test:
+![alt](output/0test.png)
+
+Now 50, 250 and 480 synthetic pictures will be added to each class within the train set. Model performance will be compared: without fake data, with 50, 250 adn 480 fake pics.
 
