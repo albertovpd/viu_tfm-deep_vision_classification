@@ -26,9 +26,11 @@ Different branches of the project:
 # Synthetic data application.
 
 The dataset was shuffled. Then 150 pics of each class were stored as test_set.
+
+
 The remaining ones were shuffled again, and split into train (80%) and validation (20%)
 
-- Without fake pics nor splitting into train/val/test we have:
+- Without fake pics, for train/val sets we have:
 ![alt](output/0.png)
 
 Splitting it:
@@ -36,8 +38,7 @@ Splitting it:
 ![alt](output/0train.png)
 - validation:
 ![alt](output/0val.png)
-- test:
-![alt](output/0test.png)
 
-Now 50, 250 and 480 synthetic pictures will be added to each class within the train set. Model performance will be compared: without fake data, with 50, 250 adn 480 fake pics.
+
+Now 50, 250 and 480 synthetic pictures will be added to each class within the train set. Model performance will be compared: without fake data, with 50, 250 and 480 fake pics.
 
