@@ -1,4 +1,3 @@
-
 # load models 
 import tensorflow as tf
 from tensorflow.keras import Model
@@ -20,21 +19,22 @@ def inferences_target_list(model, data):
     # get real labels
     y_target = tf.concat([y for x, y in data], axis=0) 
     y_target
-    print("lenght inferences and real labels: ", len(y_pred), len(y_target))
+    #print("lenght inferences and real labels: ", len(y_pred), len(y_target))
     return y_pred, y_target
 
 
-def get_missclassified(y_pred, y_target):
+def get_misclassified(y_pred, y_target):
   '''
-  returns a list with the indexes of real labels that were missclassified
+  returns a list with the indexes of real labels that were misclassified
   '''
-  missclassified = []
+  misclassified = []
   for i, (pred, target) in enumerate(zip(y_pred, y_target.numpy().tolist())):
     if pred!=target:
       #print(i, pred, target)
-      missclassified.append(i)
-  print("total missclassified: ",len(missclassified))
-  return missclassified
+      misclassified.append(i)
+  #print("total misclassified: ",len(misclassified))
+  return misclassified
+
 
 def get_list_of_files(dirName):
     '''
@@ -54,3 +54,20 @@ def get_list_of_files(dirName):
             allFiles.append(fullPath)
                 
     return allFiles
+
+def relocating_misclassified(common_misclassified):
+  '''
+  Copies the misclassified pictures to other path. 
+  Pending of refactoring.
+  '''
+  for i in common_misclassified:
+    if pic_list[i][159:162]=="Din":
+      shutil.copy(pic_list[i], "/content/drive/My Drive/2-Estudios/viu-master_ai/tfm-deep_vision/input/dataset_1test_5trainval_folders/misclassifications/Dinning"+pic_list[i][166:])
+    elif pic_list[i][159:162]=="Kit":
+      shutil.copy(pic_list[i], "/content/drive/My Drive/2-Estudios/viu-master_ai/tfm-deep_vision/input/dataset_1test_5trainval_folders/misclassifications/Kitchen"+pic_list[i][166:])
+    elif pic_list[i][159:162]=="Bed":
+      shutil.copy(pic_list[i], "/content/drive/My Drive/2-Estudios/viu-master_ai/tfm-deep_vision/input/dataset_1test_5trainval_folders/misclassifications/Bedroom"+pic_list[i][166:])
+    elif pic_list[i][159:162]=="Bat":
+      shutil.copy(pic_list[i], "/content/drive/My Drive/2-Estudios/viu-master_ai/tfm-deep_vision/input/dataset_1test_5trainval_folders/misclassifications/Bathroom"+pic_list[i][167:])
+    else:
+      shutil.copy(pic_list[i], "/content/drive/My Drive/2-Estudios/viu-master_ai/tfm-deep_vision/input/dataset_1test_5trainval_folders/misclassifications/Livingroom"+pic_list[i][169:])
