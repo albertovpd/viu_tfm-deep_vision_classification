@@ -92,6 +92,8 @@ The sections of this Master's thesis can be found in the different branches of t
 
 ----------------------------------
 
+**The master itself**: https://github.com/albertovpd/viu-ai_master
+
 **Personal info**
 <details>
   <summary>Click to expand.</summary>
